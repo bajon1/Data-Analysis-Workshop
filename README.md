@@ -1,61 +1,65 @@
 # Data Analysis Workshop
-Data analysis workshop for non-technical psychology students used during [Brainhack Kraków 2026](https://brainhackkrakow.org) event.
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bajon1/Data-Analysis-Workshop/blob/main/notebooks/workshop.ipynb)
 
-# Workshop Setup Guide
+Click **Open In Colab**, then run the first code cell. It downloads all files from this repository into your own Colab runtime, including any helper modules. Each participant works independently; no manual copying is needed to get started.
 
-Welcome! All workshop materials, including the notebook, datasets, assets, and solutions, are available in a shared Google Drive folder.
+A 90-minute data-analysis workshop for psychology participants at [Brainhack Kraków 2026](https://brainhackkrakow.org). Participants are expected to understand basic statistical reasoning; prior programming experience is not required.
 
-**Requirements:** A laptop, internet connection, and a Google account. No software installation is needed.
+The workshop uses Google Colab and the public [Big Five Personality Test dataset](https://www.kaggle.com/datasets/tunguz/big-five-personality-test). The notebook downloads the source file during the session, so no dataset is bundled with this repository.
 
-## 1. Access the Workshop Materials
+## Requirements
 
-Open the shared Google Drive folder using the link below:
+- a laptop;
+- a stable internet connection;
+- a Google account;
+- a modern web browser.
 
-📁 **[Workshop Materials](https://drive.google.com/drive/folders/1ijaY-LXx4DGp8ZrUz9KOmUY6Drk4mSBJ?usp=sharing)**
+No local Python installation is needed.
 
-You will find:
-- `workshop.ipynb` - Main workshop notebook
-- `data/` - Datasets used during the exercises
-- `assets/` - Additional workshop resources
-- `solutions/` - Completed exercises for reference
+## Materials
 
-<!-- Screenshot: Google Drive folder with workshop materials -->
-![Workshop materials folder](images/01-drive-folder.png)
+- [Participant notebook](notebooks/workshop.ipynb)
 
-## 2. Open the Notebook in Google Colab
+The same materials can be distributed through the shared [Workshop Materials folder](https://drive.google.com/drive/folders/1ijaY-LXx4DGp8ZrUz9KOmUY6Drk4mSBJ?usp=sharing).
 
-1. Find `workshop.ipynb` in the shared folder.
-2. Right-click the file.
-3. Select **Open with → Google Colaboratory**.
+## Start in Google Colab
 
-<!-- Screenshot: Opening the notebook with Google Colab -->
-![Open in Google Colab](images/02-open-colab.png)
+1. Click **Open In Colab** at the top of this README.
+2. Sign in to your own Google account if prompted.
+3. Run the first code cell to download the repository and prepare the session, then run the remaining cells in order with the button beside a cell or with `Shift+Enter`.
 
-## 3. Create Your Own Copy
+The setup cell makes the repository root the working directory and adds it to Python's import path. Helper code added as `nbutils.py` or a `nbutils/` package at the repository root will be available with `import nbutils`. The repository files are downloaded from the `main` branch on GitHub; rerunning setup keeps the existing files in the current runtime.
 
-**Before starting, save your own copy to avoid modifying the original.**
+To keep your edits after the session, optionally select **File > Save a copy in Drive**. Opening the notebook from GitHub does not automatically save a copy to your Drive.
 
-1. In Google Colab, select **File → Save a copy in Drive**.
-2. A new tab will open with your personal notebook.
-3. Continue working in this new tab.
+The first setup cell installs `kagglehub`, downloads `data-final.csv` from Kaggle to the temporary Colab runtime, and reads a bounded workshop subset. The download may take longer than the remaining cells. Restarting or disconnecting the runtime removes its temporary files, so rerun the setup cell after reconnecting.
 
-<!-- Screenshot: Save a copy in Drive -->
-![Save a copy in Drive](images/03-save-copy.png)
+## Workshop timing
 
-> All your changes will be saved to your Google Drive. The original workshop notebook will remain unchanged.
+| Time | Module |
+|---:|---|
+| 0-5 min | Setup and reproducible download |
+| 5-15 min | pandas inspection and selection |
+| 15-28 min | Cleaning and missing-data decisions |
+| 28-43 min | Big Five scoring |
+| 43-55 min | Statistical question and visualisation |
+| 55-62 min | Data leakage |
+| 62-74 min | LLM workflow without sharing rows |
+| 74-82 min | PII masking and automated detection |
+| 82-90 min | Bag of Words and sentence embeddings |
 
-## 4. Connect and Start
+Presidio and sentence-transformers are optional demonstrations. If network or installation time is limited, the facilitator can discuss their prepared outputs without running them.
 
-1. Click **Connect** in the top-right corner of Google Colab.
-2. Wait for the runtime to connect.
-3. Run a code cell by clicking the **▶** button next to it.
+## Facilitator preflight
 
-<!-- Screenshot: Connect button and running a cell -->
-![Connect and run](images/04-connect-run.png)
+Before the event, use a new Colab runtime and verify that:
 
-**You're all set!** Follow the instructions in the notebook and enjoy the workshop.
+1. the Kaggle download completes without credentials or an unexpected consent step;
+2. `data-final.csv` is found and the first 5,000 rows load;
+3. the participant notebook runs through the core scoring and analysis sections;
+4. the optional Presidio and sentence-transformers cells still install.
 
-#### Image Test
+## Data protection note
 
-![test](images/img.)
+The Kaggle data are used only as public workshop material. Real research data require a separate decision about consent, institutional policy, approved infrastructure, access control, retention, and disclosure risk. Neither pseudonymisation nor automated PII detection automatically makes a dataset safe to send to an external LLM.
