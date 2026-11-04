@@ -6,7 +6,11 @@ Click **Open In Colab**, then run the helper-setup cell above the course title. 
 
 A data-analysis workshop for psychology participants at [Brainhack Kraków 2026](https://brainhackkrakow.org). Participants are expected to understand basic statistical reasoning; prior programming experience is not required.
 
-The workshop uses Google Colab and the public [Big Five Personality Test dataset](https://www.kaggle.com/datasets/tunguz/big-five-personality-test). The notebook downloads the source file during the session, so no dataset is bundled with this repository.
+The workshop uses Google Colab and OSMI's public [Mental Health in Tech Survey](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey). The notebook downloads `survey.csv` from Kaggle during the session; no dataset is bundled with this repository. The publisher describes it as the 2014 survey and lists the data under CC BY-SA 4.0.
+
+Exercises focus on six workplace questions: `remote_work`, `self_employed`, `benefits`, `care_options`, `wellness_program`, and `seek_help`. Gender, demographic identifiers, family history, treatment history, and free-text comments are excluded from the exercise table. A complete dictionary documents all original columns.
+
+The course starts with **Part 0: setup**, then introduces functions, methods, attributes, and indexing in **Part 1**, before cleaning in **Part 2** and descriptive plots in **Part 3**. Each practical exercise adapts a worked example, includes a specific hint, and has a folded self-check. Later parts cover possible data leakage when predicting treatment, LLM coding assistance, and synthetic-text masking and NLP examples.
 
 ## Requirements
 
@@ -33,19 +37,21 @@ The setup cell makes the repository root the working directory and adds it to Py
 
 To keep your edits after the session, optionally select **File > Save a copy in Drive**. Opening the notebook from GitHub does not automatically save a copy to your Drive.
 
-The separate data-download cell in the course installs `kagglehub`, downloads `data-final.csv` from Kaggle to the temporary Colab runtime, and reads a bounded workshop subset. Restarting or disconnecting the runtime removes its temporary files, so rerun the helper setup and data-download cells after reconnecting.
+The separate data-download cell in Part 0 installs `kagglehub`, downloads `survey.csv` from Kaggle, and reads it into a pandas DataFrame. The next cell selects only the six exercise columns before displaying any rows. Restarting or disconnecting the runtime removes its temporary files, so rerun the helper setup and data-download cells after reconnecting.
 
-Presidio and sentence-transformers are optional demonstrations. If network or installation time is limited, the facilitator can discuss their prepared outputs without running them.
+Presidio and sentence-transformers are optional demonstrations. If downloads or installation are unavailable, the facilitator can discuss the synthetic examples without running these cells.
 
 ## Facilitator preflight
 
 Before the event, use a new Colab runtime and verify that:
 
 1. the Kaggle download completes without credentials or an unexpected consent step;
-2. `data-final.csv` is found and the first 5,000 rows load;
-3. the participant notebook runs through the core scoring and analysis sections;
+2. `survey.csv` loads and the six exercise columns are present;
+3. Parts 0–3 run through selection, missing-answer handling, counts, percentages, and group charts;
 4. the optional Presidio and sentence-transformers cells still install.
 
 ## Data protection note
 
-The Kaggle data are used only as public workshop material. Real research data require a separate decision about consent, institutional policy, approved infrastructure, access control, retention, and disclosure risk. Neither pseudonymisation nor automated PII detection automatically makes a dataset safe to send to an external LLM.
+The Kaggle data are used only as public workshop material. The survey is self-selected: the charts describe its responses and do not establish population prevalence, diagnoses, or causal effects. `treatment` means reported treatment-seeking, not a diagnosis. Workplace-support answers may be shaped by prior treatment experiences, so a treatment-prediction task requires an explicit information timeline and a leakage audit.
+
+Real research data require a separate decision about consent, institutional policy, approved infrastructure, access control, retention, and disclosure risk. Neither pseudonymisation nor automated PII detection automatically makes a dataset safe to send to an external LLM. The text demonstrations use invented examples and never the survey's comments.
