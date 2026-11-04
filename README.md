@@ -1,57 +1,57 @@
-# Data Analysis Workshop
+# Warsztaty analizy danych
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bajon1/Data-Analysis-Workshop/blob/main/notebooks/workshop.ipynb)
+[![Otwórz w Colabie](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bajon1/Data-Analysis-Workshop/blob/main/notebooks/workshop.ipynb)
 
-Click **Open In Colab**, then run the helper-setup cell above the course title. It downloads all files from this repository into your own Colab runtime, including any helper modules. Each participant works independently; no manual copying is needed to get started.
+Kliknij **Open In Colab**, a następnie uruchom komórkę pomocniczą nad tytułem kursu. Pobierze ona wszystkie pliki repozytorium do Twojego środowiska Colaba, w tym moduły pomocnicze. Każda osoba pracuje niezależnie; nie trzeba ręcznie kopiować plików, aby zacząć.
 
-A data-analysis workshop for psychology participants at [Brainhack Kraków 2026](https://brainhackkrakow.org). Participants are expected to understand basic statistical reasoning; prior programming experience is not required.
+Warsztaty analizy danych dla osób związanych z psychologią, przygotowane na [Brainhack Kraków 2026](https://brainhackkrakow.org). Zakładamy znajomość podstaw rozumowania statystycznego. Wcześniejsze doświadczenie w programowaniu nie jest wymagane.
 
-The workshop uses Google Colab and OSMI's public [Mental Health in Tech Survey](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey). The notebook downloads `survey.csv` from Kaggle during the session; no dataset is bundled with this repository. The publisher describes it as the 2014 survey and lists the data under CC BY-SA 4.0.
+Kurs wykorzystuje Google Colab i publiczną [ankietę OSMI dotyczącą zdrowia psychicznego w branży technologicznej](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey). Notebook pobiera plik `survey.csv` z Kaggle podczas zajęć; repozytorium nie zawiera zbioru danych. Autorzy opisują zbiór jako ankietę z 2014 roku i udostępniają go na licencji CC BY-SA 4.0.
 
-Exercises focus on six workplace questions: `remote_work`, `self_employed`, `benefits`, `care_options`, `wellness_program`, and `seek_help`. Gender, demographic identifiers, family history, treatment history, and free-text comments are excluded from the exercise table. A complete dictionary documents all original columns.
+Ćwiczenia dotyczą sześciu pytań o miejsce pracy: `remote_work`, `self_employed`, `benefits`, `care_options`, `wellness_program` i `seek_help`. Płeć, dane demograficzne, historia rodzinna, historia leczenia i komentarze tekstowe nie wchodzą do tabeli ćwiczeniowej. Pełny słownik opisuje wszystkie kolumny źródłowe.
 
-The course starts with **Part 0: setup**, then introduces functions, methods, attributes, and indexing in **Part 1**, before cleaning in **Part 2** and descriptive plots in **Part 3**. Each practical exercise adapts a worked example, includes a specific hint, and has a folded self-check. Later parts cover possible data leakage when predicting treatment, LLM coding assistance, and synthetic-text masking and NLP examples.
+Kurs zaczyna się od **części 0: przygotowanie**. **Część 1** wprowadza funkcje, metody, atrybuty i indeksowanie, **część 2** dotyczy czyszczenia, a **część 3** — wykresów opisowych. Każde ćwiczenie praktyczne opiera się na pokazanym przykładzie, zawiera konkretną podpowiedź i zwijaną odpowiedź do samodzielnego sprawdzenia. Dalsze części omawiają ryzyko wycieku danych przy przewidywaniu szukania leczenia, pomoc LLM w pisaniu kodu oraz maskowanie i przetwarzanie wymyślonego tekstu.
 
-## Requirements
+## Wymagania
 
-- a laptop;
-- a stable internet connection;
-- a Google account;
-- a modern web browser.
+- laptop;
+- stabilne połączenie z internetem;
+- konto Google;
+- współczesna przeglądarka internetowa.
 
-No local Python installation is needed.
+Nie trzeba instalować Pythona na własnym komputerze.
 
-## Materials
+## Materiały
 
-- [Participant notebook](notebooks/workshop.ipynb)
+- [Notebook uczestnika](notebooks/workshop.ipynb)
 
-The same materials can be distributed through the shared [Workshop Materials folder](https://drive.google.com/drive/folders/1ijaY-LXx4DGp8ZrUz9KOmUY6Drk4mSBJ?usp=sharing).
+Materiały można też udostępniać przez wspólny [folder materiałów warsztatowych](https://drive.google.com/drive/folders/1ijaY-LXx4DGp8ZrUz9KOmUY6Drk4mSBJ?usp=sharing).
 
-## Start in Google Colab
+## Uruchomienie w Google Colab
 
-1. Click **Open In Colab** at the top of this README.
-2. Sign in to your own Google account if prompted.
-3. Run the helper-setup cell above the course title to download the repository. Then follow the course from the title onward, running cells in order with the button beside a cell or with `Shift+Enter`.
+1. Kliknij **Open In Colab** u góry tego README.
+2. W razie potrzeby zaloguj się na własne konto Google.
+3. Uruchom komórkę pomocniczą nad tytułem kursu, aby pobrać repozytorium. Następnie przechodź przez kurs od tytułu, wykonując komórki po kolei przyciskiem obok nich lub skrótem `Shift+Enter`.
 
-The setup cell makes the repository root the working directory and adds it to Python's import path. Helper code added as `nbutils.py` or a `nbutils/` package at the repository root will be available with `import nbutils`. The repository files are downloaded from the `main` branch on GitHub; rerunning setup keeps the existing files in the current runtime.
+Komórka przygotowawcza ustawia katalog główny repozytorium jako katalog roboczy i dodaje go do ścieżki importów Pythona. Kod pomocniczy dodany jako `nbutils.py` lub pakiet `nbutils/` w katalogu głównym będzie dostępny przez `import nbutils`. Pliki są pobierane z gałęzi `main` na GitHubie. Ponowne uruchomienie komórki zachowuje pliki istniejące już w danej sesji.
 
-To keep your edits after the session, optionally select **File > Save a copy in Drive**. Opening the notebook from GitHub does not automatically save a copy to your Drive.
+Aby zachować własne zmiany po zakończeniu sesji, możesz wybrać **Plik → Zapisz kopię na Dysku** (**File → Save a copy in Drive** w angielskim interfejsie). Otwarcie notebooka z GitHuba nie zapisuje automatycznie kopii na Twoim Dysku.
 
-The separate data-download cell in Part 0 installs `kagglehub`, downloads `survey.csv` from Kaggle, and reads it into a pandas DataFrame. The next cell selects only the six exercise columns before displaying any rows. Restarting or disconnecting the runtime removes its temporary files, so rerun the helper setup and data-download cells after reconnecting.
+Osobna komórka w części 0 instaluje `kagglehub`, pobiera `survey.csv` z Kaggle i odczytuje go do tabeli pandas. Następna komórka wybiera wyłącznie sześć kolumn ćwiczeniowych, zanim wyświetli jakiekolwiek wiersze. Ponowne uruchomienie lub odłączenie środowiska usuwa pliki tymczasowe, dlatego po połączeniu uruchom ponownie przygotowanie modułów i pobieranie danych.
 
-Presidio and sentence-transformers are optional demonstrations. If downloads or installation are unavailable, the facilitator can discuss the synthetic examples without running these cells.
+Presidio i sentence-transformers są demonstracjami opcjonalnymi. Jeśli pobieranie lub instalacja są niedostępne, osoba prowadząca może omówić wymyślone przykłady bez wykonywania tych komórek.
 
-## Facilitator preflight
+## Sprawdzenie przed zajęciami
 
-Before the event, use a new Colab runtime and verify that:
+Przed wydarzeniem uruchom nowe środowisko Colaba i sprawdź, czy:
 
-1. the Kaggle download completes without credentials or an unexpected consent step;
-2. `survey.csv` loads and the six exercise columns are present;
-3. Parts 0–3 run through selection, missing-answer handling, counts, percentages, and group charts;
-4. the optional Presidio and sentence-transformers cells still install.
+1. pobieranie z Kaggle kończy się bez żądania danych logowania lub niespodziewanej dodatkowej zgody;
+2. plik `survey.csv` się wczytuje i zawiera sześć kolumn ćwiczeniowych;
+3. części 0–3 działają: wybieranie danych, obsługa braków, liczebności, procenty i wykresy grupowe;
+4. biblioteki potrzebne do opcjonalnych demonstracji Presidio i sentence-transformers nadal dają się zainstalować.
 
-## Data protection note
+## Ochrona danych i granice interpretacji
 
-The Kaggle data are used only as public workshop material. The survey is self-selected: the charts describe its responses and do not establish population prevalence, diagnoses, or causal effects. `treatment` means reported treatment-seeking, not a diagnosis. Workplace-support answers may be shaped by prior treatment experiences, so a treatment-prediction task requires an explicit information timeline and a leakage audit.
+Dane z Kaggle służą wyłącznie jako publiczny materiał warsztatowy. Uczestnicy zgłaszali się do ankiety samodzielnie: wykresy opisują ich odpowiedzi i nie ustalają częstości występowania zaburzeń w populacji, diagnoz ani skutków przyczynowych. `treatment` oznacza deklarowane szukanie leczenia, a nie diagnozę. Wcześniejsze doświadczenia związane z leczeniem mogły wpływać na opinie o wsparciu w miejscu pracy, dlatego zadanie przewidywania szukania leczenia wymaga określenia kolejności dostępności informacji i sprawdzenia ryzyka wycieku danych.
 
-Real research data require a separate decision about consent, institutional policy, approved infrastructure, access control, retention, and disclosure risk. Neither pseudonymisation nor automated PII detection automatically makes a dataset safe to send to an external LLM. The text demonstrations use invented examples and never the survey's comments.
+Praca z rzeczywistymi danymi badawczymi wymaga osobnej decyzji dotyczącej zgód, zasad instytucji, zatwierdzonej infrastruktury, uprawnień dostępu, czasu przechowywania i ryzyka ujawnienia. Ani pseudonimizacja, ani automatyczne wykrywanie danych identyfikujących nie sprawiają automatycznie, że zbiór można bezpiecznie przesłać do zewnętrznego LLM. Przykłady tekstowe są wymyślone i nigdy nie wykorzystują komentarzy respondentów.
