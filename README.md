@@ -10,7 +10,7 @@ Kurs wykorzystuje Google Colab i publiczną [ankietę OSMI dotyczącą zdrowia p
 
 Ćwiczenia dotyczą sześciu pytań o miejsce pracy: `remote_work`, `self_employed`, `benefits`, `care_options`, `wellness_program` i `seek_help`. Płeć, dane demograficzne, historia rodzinna, historia leczenia i komentarze tekstowe nie wchodzą do tabeli ćwiczeniowej. Pełny słownik opisuje wszystkie kolumny źródłowe.
 
-Kurs zaczyna się od **części 0: przygotowanie**. **Część 1** wprowadza funkcje, metody, atrybuty i indeksowanie, **część 2** dotyczy czyszczenia, a **część 3** — wykresów opisowych. Każde ćwiczenie praktyczne opiera się na pokazanym przykładzie, zawiera konkretną podpowiedź i zwijaną odpowiedź do samodzielnego sprawdzenia. Dalsze części omawiają ryzyko wycieku danych przy przewidywaniu szukania leczenia, pomoc LLM w pisaniu kodu oraz maskowanie i przetwarzanie wymyślonego tekstu.
+Kurs zaczyna się od **części 0: przygotowanie**. **Część 1** pokazuje, jak czytać krótkie polecenia, rozumieć nawiasy i wybierać dane z tabeli. **Część 2** dotyczy czyszczenia, a **część 3** — wykresów opisowych. Każde ćwiczenie praktyczne opiera się na pokazanym przykładzie, zawiera konkretną podpowiedź i zwijaną odpowiedź do samodzielnego sprawdzenia. Dalsze części omawiają ryzyko wycieku danych przy przewidywaniu szukania leczenia, pomoc LLM w pisaniu kodu oraz maskowanie i przetwarzanie wymyślonego tekstu.
 
 ## Wymagania
 
@@ -33,7 +33,7 @@ Materiały można też udostępniać przez wspólny [folder materiałów warszta
 2. W razie potrzeby zaloguj się na własne konto Google.
 3. Uruchom komórkę pomocniczą nad tytułem kursu, aby pobrać repozytorium. Następnie przechodź przez kurs od tytułu, wykonując komórki po kolei przyciskiem obok nich lub skrótem `Shift+Enter`.
 
-Komórka przygotowawcza ustawia katalog główny repozytorium jako katalog roboczy i dodaje go do ścieżki importów Pythona. Kod pomocniczy dodany jako `nbutils.py` lub pakiet `nbutils/` w katalogu głównym będzie dostępny przez `import nbutils`. Pliki są pobierane z gałęzi `main` na GitHubie. Ponowne uruchomienie komórki zachowuje pliki istniejące już w danej sesji.
+Komórka przygotowawcza pobiera pliki potrzebne do warsztatów. Dzięki temu możemy korzystać także z kodu pomocniczego, np. pliku `nbutils.py`, przez zapis `import nbutils`. Pobierana jest wersja z gałęzi `main` na GitHubie. Ponowne uruchomienie komórki zachowuje pliki istniejące już w danej sesji.
 
 Aby zachować własne zmiany po zakończeniu sesji, możesz wybrać **Plik → Zapisz kopię na Dysku** (**File → Save a copy in Drive** w angielskim interfejsie). Otwarcie notebooka z GitHuba nie zapisuje automatycznie kopii na Twoim Dysku.
 
