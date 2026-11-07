@@ -1,6 +1,6 @@
-﻿# Data Analysis Workshop
+# Data Analysis Workshop
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bajon1/Data-Analysis-Workshop/blob/main/notebooks/workshop.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bajon1/Data-Analysis-Workshop/blob/ba86b74fd20bc7122bb0bf26e9feb08855a3e732/notebooks/workshop.ipynb)
 
 Click **Open in Colab**, read the introduction, and run the first code cell. It downloads all repository files into your Colab environment, including helper modules. Everyone works independently; no manual file copying is needed.
 
@@ -26,7 +26,7 @@ You do not need to install Python on your computer.
 ## Materials
 
 - [Participant notebook — exercises to complete](notebooks/workshop.ipynb)
-- [Answer notebook — complete solutions](notebooks/workshop_solutions.ipynb) · [open answers in Colab](https://colab.research.google.com/github/bajon1/Data-Analysis-Workshop/blob/main/notebooks/workshop_solutions.ipynb)
+- [Answer notebook — complete solutions](notebooks/workshop_solutions.ipynb) · [open answers in Colab](https://colab.research.google.com/github/bajon1/Data-Analysis-Workshop/blob/ba86b74fd20bc7122bb0bf26e9feb08855a3e732/notebooks/workshop_solutions.ipynb)
 
 Both versions are maintained together: changes to the course, descriptions, or exercises also go into the answer notebook.
 
