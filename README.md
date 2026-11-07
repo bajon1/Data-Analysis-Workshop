@@ -10,7 +10,7 @@ Kurs wykorzystuje Google Colab i publiczną [ankietę OSMI dotyczącą zdrowia p
 
 Ćwiczenia dotyczą sześciu pytań o miejsce pracy: `remote_work`, `self_employed`, `benefits`, `care_options`, `wellness_program` i `seek_help`. Płeć, dane demograficzne, historia rodzinna, historia leczenia i komentarze tekstowe nie wchodzą do tabeli ćwiczeniowej. Pełny słownik opisuje wszystkie kolumny źródłowe.
 
-Kurs zaczyna się od **części 0: przygotowanie**. **Część 1** pokazuje, jak czytać krótkie polecenia, wybierać kolumny po nazwach lub pozycjach i filtrować wiersze. **Część 2** dotyczy braków danych i sprawdzania liczebności odpowiedzi. **Część 3** obejmuje wykresy słupkowe, procenty, porównywanie grup i krótką galerię wykresów do modyfikowania. **Część 4** pokazuje maskowanie wymyślonego tekstu za pomocą regex oraz rozpoznawania osób i miejsc z kontekstu.
+Kurs zaczyna się od **części 0: przygotowanie**. **Część 1** pokazuje, jak czytać krótkie polecenia, wybierać kolumny po nazwach lub pozycjach i filtrować wiersze. **Część 2** dotyczy braków danych i sprawdzania liczebności odpowiedzi. **Część 3** obejmuje wykresy słupkowe, procenty, porównywanie grup i krótką galerię wykresów do modyfikowania. **Część 4** pokazuje maskowanie wymyślonego tekstu za pomocą regex oraz rozpoznawania osób i miejsc z kontekstu. **Część 5** porównuje znaczenie słów, a następnie wymyślonych komentarzy z jednym pozytywnym i jednym negatywnym przykładem, bez ręcznego wypisywania słów kluczowych.
 
 W kursie jest **8 ćwiczeń**, ponumerowanych od 1 do 8. Każde ma opis, podpowiedź, przykład i komórkę z poleceniem. Zadania po części 1 i na końcu części 2 łączą poznane operacje. Pełny słownik kolumn można rozwinąć w razie potrzeby. Wersja warsztatowa pozostawia zadania do wykonania; osobny notatnik zawiera odpowiedzi i pomaga wrócić do pracy po pominięciu fragmentu zajęć.
 
@@ -46,6 +46,8 @@ Osobna komórka w części 0 instaluje `kagglehub`, pobiera `survey.csv` z Kaggl
 
 Przykład rozpoznawania osób i miejsc w części 4 pobiera angielski model spaCy. Jeśli pobieranie lub instalacja są niedostępne, osoba prowadząca może omówić pokazane zdanie i schemat zamiany bez wykonywania tej demonstracji.
 
+Część 5 instaluje `sentence-transformers` i pobiera model obsługujący wiele języków. Pierwsze uruchomienie może potrwać dłużej. Większe podobieństwo do przykładu nie jest procentem pewności ani gwarancją poprawnej oceny komentarza. Pokaz korzysta wyłącznie z wymyślonych wypowiedzi; liczba ćwiczeń pozostaje równa 8.
+
 ## Sprawdzenie przed zajęciami
 
 Przed wydarzeniem uruchom nowe środowisko Colaba i sprawdź, czy:
@@ -54,7 +56,8 @@ Przed wydarzeniem uruchom nowe środowisko Colaba i sprawdź, czy:
 2. plik `survey.csv` się wczytuje i zawiera sześć kolumn ćwiczeniowych;
 3. części 0–3 działają: wybieranie danych, obsługa braków, liczebności, procenty i wykresy grupowe;
 4. model spaCy z części 4 daje się zainstalować i rozpoznaje osobę oraz miasto w wymyślonym zdaniu;
-5. notatnik z odpowiedziami działa od początku, a wersja warsztatowa zawiera przykłady i miejsca na własne rozwiązania.
+5. dwie kolejne komórki części 5 pokazują podobieństwo słów i porównanie wymyślonych komentarzy z dwoma wzorcami;
+6. notatnik z odpowiedziami działa od początku, a wersja warsztatowa zawiera przykłady i miejsca na własne rozwiązania.
 
 ## Ochrona danych i granice interpretacji
 
